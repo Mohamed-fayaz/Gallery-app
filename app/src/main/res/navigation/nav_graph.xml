@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/login">
+
+    <fragment
+        android:id="@+id/login"
+        android:name="com.example.mygallery.Login"
+        android:label="login_fragment"
+        tools:layout="@layout/login_fragment" >
+        <action
+            android:id="@+id/action_login_to_grid"
+            app:destination="@id/grid" />
+    </fragment>
+    <fragment
+        android:id="@+id/grid"
+        android:name="com.example.mygallery.grid"
+        android:label="grid_fragment"
+        tools:layout="@layout/grid_fragment" >
+        <action
+            android:id="@+id/action_grid_to_detail"
+            app:destination="@id/detail" />
+    </fragment>
+    <fragment
+        android:id="@+id/detail"
+        android:name="com.example.mygallery.Detail"
+        android:label="fragment_detail"
+        tools:layout="@layout/fragment_detail">
+    <argument
+        android:name="SelectedImage"
+        app:argType="com.example.mygallery.ImageModel"/>
+        <argument
+            android:name="ListOfImages"
+            app:argType="com.example.mygallery.ListofImages"/>
+    </fragment>
+</navigation>
